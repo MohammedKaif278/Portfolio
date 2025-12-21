@@ -12,13 +12,7 @@
    --transition: all 0.3s ease;
  }
 
- /* .dark {
-      --bg: #1e293b;
-      --text: #f8fafc;
-      --text-light: #e2ecfb;
-      --card-bg: #334155;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    } */
+
 
  * {
    margin: 0;
@@ -28,11 +22,8 @@
 
  body {
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   /* background: var(--bg); original */
    background: #1e293b;
-
    color: var(--text);
-
    line-height: 1.6;
    transition: var(--transition);
  }
@@ -43,9 +34,7 @@
 
  /* Header & Navigation */
  header {
-   /* background: var(--card-bg); original */
    background: #334155;
-   /* box-shadow: var(--shadow); */
    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
    position: sticky;
    top: 0;
@@ -64,7 +53,6 @@
  .logo {
    font-size: 1.5rem;
    font-weight: 700;
-   /* color: var(--text); original */
    color: #f8fafc;
  }
 
@@ -76,7 +64,6 @@
 
  .nav-links li a {
    text-decoration: none;
-   /* color: var(--text);original */
    color: #f8fafc;
    font-weight: 500;
    transition: var(--transition);
@@ -108,7 +95,6 @@
    border: none;
    font-size: 1.5rem;
    cursor: pointer;
-   /* color: var(--text); */
    color: #f8fafc;
  }
 
@@ -133,9 +119,7 @@
    align-items: center;
    justify-content: center;
    text-align: center;
-   /* background: linear-gradient(135deg, var(--primary), var(--secondary)); */
    background: linear-gradient(135deg, #101820, #1a2634);
-
    color: white;
    padding: 0 2rem;
  }
@@ -295,17 +279,14 @@
 
  .skills-grid {
    display: grid;
-   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
    gap: 1.5rem;
    grid-template-columns: repeat(3, 1fr);
  }
 
  .skill-category {
-   /* background: var(--card-bg);original */
    background: #334155;
    padding: 1.5rem;
    border-radius: 8px;
-   /* box-shadow: var(--shadow);original */
    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
  }
 
@@ -342,7 +323,6 @@
  }
 
  .card {
-   /* background: var(--card-bg);original */
    background: #334155;
    border-radius: 10px;
    overflow: hidden;
@@ -372,7 +352,6 @@
  }
 
  .card p {
-   /* color: var(--text-light);original */
    color: #e2ecfb;
    margin-bottom: 1.5rem;
    line-height: 1.6;
@@ -439,11 +418,9 @@
 
  /* Education Section */
  .education-item {
-   /* background: var(--card-bg);original */
    background: #334155;
    padding: 1.5rem;
    border-radius: 8px;
-   /* box-shadow: var(--shadow);original */
    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
    margin-bottom: 1.5rem;
  }
@@ -454,7 +431,6 @@
  }
 
  .education-item p {
-   /* color: var(--text-light);original */
    color: #e2ecfb;
    margin-bottom: 0.5rem;
  }
@@ -483,7 +459,6 @@
    border: 1px solid #ddd;
    border-radius: 5px;
    font-family: inherit;
-   /* background: var(--card-bg);original */
    background: #334155;
    color: white;
    transition: var(--transition);
@@ -538,7 +513,6 @@ textarea::placeholder {
  }
 
  .contact-info {
-   /* background: var(--card-bg);original */
    background: #334155;
    padding: 2rem;
    border-radius: 10px;
@@ -584,21 +558,17 @@ textarea::placeholder {
    width: 40px;
    height: 40px;
    text-decoration: none;
-   /* background: var(--primary); */
-
    color: white;
    border-radius: 50%;
    transition: var(--transition);
  }
 
  .social-links a:hover {
-   /* background: var(--primary-light); */
    transform: translateY(-3px);
  }
 
  /* Footer */
  footer {
-   /* background: var(--card-bg);original */
    background: #334155;
    padding: 2rem;
    text-align: center;
@@ -614,23 +584,29 @@ textarea::placeholder {
 
  /* Responsive Design */
  @media (max-width: 768px) {
-  
-
-   .navbar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   }
  
-    .nav-links {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 5px;
-    scrollbar-width: none; /* Hide scrollbar */
-  }
+ .hamburger {
+        display: block;
+        z-index: 1001;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg-dark);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links.open {
+        left: 0;
+      }
+
 
   .nav-links::-webkit-scrollbar {
     display: none;

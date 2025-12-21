@@ -4,7 +4,24 @@
       once: true
     });
 
-    
+
+
+// Mobile menu toggle
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      hamburgerBtn.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburgerBtn.textContent = '☰';
+      });
+    });
 
     // Form validation
     const contactForm = document.getElementById('contact-form');
