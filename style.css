@@ -139,6 +139,7 @@
   animation: reveal 5s ease forwards;
   opacity: 0;
   clip-path: inset(0 100% 0 0);
+  color: blue;
  }
 
  .hero h2 {
