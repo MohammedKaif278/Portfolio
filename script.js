@@ -4,7 +4,18 @@
       once: true
     });
 
-
+const typeHome = new Typed("#home-typed", {
+  strings: [
+    
+    "Java Backend Developer",
+    "Web Developer",
+    "Full Stack Java Developer",
+  ],
+  typeSpeed: 80,
+  backSpeed: 30,
+  backDelay: 2000,
+  cursorChar: "_"
+});
 
 // Mobile menu toggle
     const hamburgerBtn = document.getElementById('hamburger-btn');
